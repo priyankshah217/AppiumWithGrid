@@ -30,11 +30,11 @@ public class AppUtils {
 	public static String PLATFORM_VERSION;
 	public static String DEVICE_READY_TIMEOUT;
 	public static String DEVICE_NAME;
-	private static DesiredCapabilities capabilities = new DesiredCapabilities();
-	private static URL serverUrl;
-	private static AndroidDriver driver;
+	private DesiredCapabilities capabilities = new DesiredCapabilities();
+	private URL serverUrl;
+	private AndroidDriver driver;
 
-	public static void loadConfigProp(String propertyFileName)
+	public void loadConfigProp(String propertyFileName)
 			throws IOException {
 		prop.load(ClassLoader.getSystemResource(propertyFileName).openStream());
 
@@ -56,7 +56,7 @@ public class AppUtils {
 		DEVICE_READY_TIMEOUT=prop.getProperty("device.ready.timeout");
 	}
 
-	public static void setCapabilities() {
+	public void setCapabilities() {
 		capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,
 				AppUtils.BROWSER_NAME);
 		capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,
@@ -80,7 +80,7 @@ public class AppUtils {
 				AppUtils.BASE_PKG);
 	}
 
-	public static AndroidDriver getDriver() throws MalformedURLException {
+	public AndroidDriver getDriver() throws MalformedURLException {
 		serverUrl = new URL("http://localhost:" + APPIUM_PORT + "/wd/hub");		
 		driver = new AndroidDriver(serverUrl, capabilities);
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);

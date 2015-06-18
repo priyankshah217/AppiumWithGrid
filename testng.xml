@@ -1,46 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Appium Smoke Tests Execution Report"
-	skipfailedinvocationCounts="false" thread-count="100">
+	skipfailedinvocationCounts="false" thread-count="100" parallel="tests">
 	<!-- parameter name="config-file" value="src/test/resources/default.properties" -->
-
-	<test name="SelendroidAppTests" verbose="5" enabled="true">
+	
+	<test name="ApiDemoTests_Device_1" verbose="5" enabled="true">
 		<groups>
 			<run>
 				<include name="Smoke" />
 			</run>
 		</groups>
-		<classes parallel="false" preserve-order="true">
-			<class name="com.test.TestAppiumSelendroidApp" />
-		</classes>
-	</test>
-	<test name="ApiDemoTests" verbose="5" enabled="true">
-		<groups>
-			<run>
-				<include name="Smoke" />
-			</run>
-		</groups>
-		<classes parallel="false" preserve-order="true">
+		<classes>
 			<class name="com.test.TestAppiumApiDemoApp" />
 		</classes>
 	</test>
-	<test name="GitHubMobileWebSiteTests" verbose="5" enabled="true">
+	<test name="ApiDemoTests_Device_2" verbose="5" enabled="true">
 		<groups>
 			<run>
 				<include name="Smoke" />
 			</run>
 		</groups>
-		<classes parallel="false" preserve-order="true">
-			<class name="com.test.TestAppiumGoogleSearchMobileWeb" />
-		</classes>
-	</test>
-	<test name="EmployeeDirectoryTests" verbose="5" enabled="true">
-		<groups>
-			<run>
-				<include name="Smoke" />
-			</run>
-		</groups>
-		<classes parallel="false" preserve-order="true">
-			<class name="com.test.TestAppiumEmployeeDirectoryApp" />
+		<classes>
+			<class name="com.test.TestAppiumApiDemoApp" />
 		</classes>
 	</test>
 	<listeners>

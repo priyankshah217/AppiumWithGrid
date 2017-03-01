@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Appium Smoke Tests Execution Report"
-	skipfailedinvocationCounts="false" thread-count="100" parallel="tests">
-	<!-- parameter name="config-file" value="src/test/resources/default.properties" -->
-	
-	<test name="ApiDemoTests_Device_1" verbose="5" enabled="true">
-		<groups>
-			<run>
-				<include name="Smoke" />
-			</run>
-		</groups>
-		<classes>
-			<class name="com.test.TestAppiumApiDemoApp" />
-		</classes>
-	</test>
-	<test name="ApiDemoTests_Device_2" verbose="5" enabled="true">
-		<groups>
-			<run>
-				<include name="Smoke" />
-			</run>
-		</groups>
-		<classes>
-			<class name="com.test.TestAppiumApiDemoApp" />
-		</classes>
-	</test>
-	<listeners>
-		<listener class-name="org.uncommons.reportng.HTMLReporter" />
-		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
-	</listeners>
+<suite name="Appium Smoke Tests Execution Report" thread-count="100" parallel="tests">
+    <!-- parameter name="config-file" value="src/test/resources/default.properties" -->
+
+    <test name="ApiDemoTests_Device_1" verbose="5" enabled="true">
+        <parameter name="deviceID" value="HT6A30201415"/>
+        <groups>
+            <run>
+                <include name="Smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.test.TestAppiumApiDemoApp"/>
+        </classes>
+    </test>
+    <test name="ApiDemoTests_Device_2" verbose="5" enabled="true">
+        <parameter name="deviceID" value="ZY223GDMPT"/>
+        <groups>
+            <run>
+                <include name="Smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.test.TestAppiumApiDemoApp"/>
+        </classes>
+    </test>
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
 </suite>
